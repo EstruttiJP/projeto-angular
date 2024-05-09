@@ -1,0 +1,19 @@
+.header, .header a{
+    display: flex;
+    align-items: center;
+}
+.header a{
+    text-decoration: none;
+    color: rgb(98, 98, 255);
+}
+.header .icon i{
+    padding-left: 5px;
+}
+.header .title-group{
+    color: rgb(98, 98, 255);
+    font-weight: 400;
+    padding-left: 32px;
+}
+.header .title-group i{
+    padding-right: 8px;
+}
