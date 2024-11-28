@@ -1,0 +1,18 @@
+.edit{
+    margin-right: 25px;
+}
+.delete{
+    margin-right: -80px;
+}
+.edit > i{
+    color: #d9cd26;
+}
+.delete > i{
+    color: #ff5757;
+}
+i{
+    transition: .8s;
+}
+i:hover{
+    transform: scale(1.3);
+}
