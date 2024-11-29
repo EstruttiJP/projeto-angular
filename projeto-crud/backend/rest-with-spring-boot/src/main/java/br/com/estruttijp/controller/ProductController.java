@@ -30,7 +30,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
 @RestController
-@RequestMapping("/api/product/v1")
+@RequestMapping("/api/product/v2")
 @Tag(name = "Product", description = "Endpoints for Managing Products")
 public class ProductController {
 	

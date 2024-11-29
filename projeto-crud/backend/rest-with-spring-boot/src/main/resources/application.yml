@@ -1,7 +1,7 @@
 cors:
   originPatterns: http://localhost:3000,http://localhost:8080
 file:
-  upload-dir: /Users/adm/Desktop/UpdateProjects/projeto-angular/projeto crud/backend/UploadDir
+  upload-dir: /Users/adm/Desktop/UpdateProjects/projeto-angular/projeto-crud/backend/UploadDir
 security:
   jwt:
     token:
@@ -29,6 +29,6 @@ spring:
 springdoc:
   pathsToMatch:
     - /auth/**
-    - /api/**/v1/**
+    - /api/**/v2/**
   swagger-ui:
     use-root-path: true

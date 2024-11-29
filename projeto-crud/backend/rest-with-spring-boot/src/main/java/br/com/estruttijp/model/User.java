@@ -51,11 +51,27 @@ public class User implements UserDetails, Serializable {
 	private Boolean enabled;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "user_permission", joinColumns = {@JoinColumn (name = "id_user")},
+	@JoinTable(name = "user_permission", 
+		joinColumns = {@JoinColumn (name = "id_user")},
 		inverseJoinColumns = {@JoinColumn (name = "id_permission")}
 	)
 	private List<Permission> permissions;
 	
+	@ManyToMany(fetch = FetchType.LAZY)
+	@JoinTable(name = "carrinho", 
+		joinColumns = {@JoinColumn (name = "id_user")},
+		inverseJoinColumns = {@JoinColumn (name = "id_produto")}
+	)
+	private List<Product> produtos;
+	
+	public List<Product> getProdutos() {
+		return produtos;
+	}
+
+	public void setProdutos(List<Product> produtos) {
+		this.produtos = produtos;
+	}
+
 	public User() {}
 
 	public List<String> getRoles() {
@@ -164,7 +180,7 @@ public class User implements UserDetails, Serializable {
 	public void setPermissions(List<Permission> permissions) {
 		this.permissions = permissions;
 	}
-
+	
 	public void setPassword(String password) {
 		this.password = password;
 	}

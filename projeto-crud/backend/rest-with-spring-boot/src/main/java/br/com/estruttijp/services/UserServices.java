@@ -1,5 +1,7 @@
 package br.com.estruttijp.services;
 
+
+import java.util.List;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import br.com.estruttijp.data.vo.v2.ProductVO;
+import br.com.estruttijp.exceptions.ResourceNotFoundException;
+import br.com.estruttijp.mapper.DozerMapper;
 import br.com.estruttijp.repositories.UserRepository;
 
 
@@ -33,4 +38,17 @@ public class UserServices implements UserDetailsService {
 			throw new UsernameNotFoundException("Username " + username + " not found!");
 		}
 	}
+	
+	public List<ProductVO> getProductsInCart(Long userId) {
+		logger.info("Finding products in Carts!");
+		
+        var entity = repository.findProductsInCartByUserId(userId);
+        var products = DozerMapper.parseListObjects(entity, ProductVO.class);
+        
+        if (products != null) {
+			return products;
+		} else {
+			throw new ResourceNotFoundException("No products found for this cart! It is empty!");
+		}
+    }
 }

@@ -6,7 +6,6 @@ import org.springframework.context.annotation.Configuration;
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;
 import io.swagger.v3.oas.models.info.License;
-import jakarta.validation.constraints.AssertFalse.List;
 
 @Configuration
 public class OpenApiConfig {
