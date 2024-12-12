@@ -1,7 +1,9 @@
+server:
+  port: 8888
 cors:
   originPatterns: http://localhost:4200,http://localhost:8080
 file:
-  upload-dir: /Users/adm/Desktop/UpdateProjects/projeto-angular/projeto-crud/backend/UploadDir
+  upload-dir: /home/runner/work/projeto-angular/projeto-crud/backend/UploadDir
 security:
   jwt:
     token:
@@ -10,9 +12,6 @@ security:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/rest_spring_products?useTimezone=true&serverTimezone=UTC
-    username: root
-    password: usbw
   jpa:
     hibernate:
       ddl-auto: none
@@ -22,10 +21,10 @@ spring:
     show-sql: false
   servlet:
     multipart:
-     enabled: true
-     file-size-threshold: 2KB
-     max-file-size: 200MB
-     max-request-size: 215MB
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
 springdoc:
   pathsToMatch:
     - /auth/**

@@ -82,7 +82,3 @@ Sinta-se à vontade para contribuir! Para isso, siga os passos abaixo:
    ```
 
 5. Abra um pull request.
-
-## Licença
-
-Este projeto é licenciado sob a **MIT License**.
