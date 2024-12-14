@@ -16,7 +16,7 @@ export class ProductUpdateComponent implements OnInit {
 
   product: Product;
 
-  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute, private headerService: HeaderService){
+  constructor(private productService: ProductService, private router: Router, private route: ActivatedRoute, private headerService: HeaderService) {
     headerService.headerData = {
       title: "Alteração de Produto",
       icon: "storefront",
@@ -25,20 +25,18 @@ export class ProductUpdateComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id !== null) {
-      this.productService.readById(id).subscribe(product => {
-        this.product = product;
-      });
-    }
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.productService.readById(id).subscribe(product => {
+      this.product = product;
+    });
   }
   updateProduct(): void {
     this.productService.update(this.product).subscribe(() => {
-      this.productService.showMessage('alteração realizada com sucesso!');
-      this.router.navigate(['/products'])
+      this.productService.showMessage('Alteração realizada com sucesso!');
+      this.router.navigate(['/products-admin'])
     });
   }
   cancel(): void {
-    this.router.navigate(['/products'])
+    this.router.navigate(['/products-admin'])
   }
 }

@@ -11,19 +11,35 @@ import { Product } from '../product.model';
 export class ProductCreateComponent {
 
   product: Product = {
-    id: "5",
     name: '',
-    price: 0
+    price: 0,
+    category: '',
+    imageUrl: '',
+    launchDate: new Date().toISOString().replace('Z', '')
   }
 
-  constructor(private productService: ProductService, private router: Router){}
-  createProduct(): void{
-    this.productService.create(this.product).subscribe(()=>{
-      this.productService.showMessage('operação realizada com sucesso!');
-      this.router.navigate(['/products'])
-    });
+  selectedFile: File = null;
+
+  constructor(private productService: ProductService, private router: Router) { }
+
+  createProduct(): void {
+    this.productService.uploadImage(this.selectedFile).subscribe(()=>{
+      this.productService.create(this.product).subscribe(() => {
+        this.productService.showMessage('Produto criado com sucesso! Aguarde a imagem ser carregada no sistema...');
+        this.router.navigate(['/products-admin'])
+      });
+    })
   }
-  cancel(): void{
-    this.router.navigate(['/products'])
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+      this.product.imageUrl = "assets/" + this.selectedFile.name;
+    }
+  }
+
+  cancel(): void {
+    this.router.navigate(['/products-admin'])
   }
 }

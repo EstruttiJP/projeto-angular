@@ -103,7 +103,7 @@ public class ProductControllerCorsJsonTest extends AbstractIntegrationTest {
         assertTrue(product.getId() > 0);
         assertEquals("Carne - Carne de Boi", product.getName());
         assertEquals("Alimentos", product.getCategory());
-        assertEquals("https://example.com/images/beef.jpg", product.getImageUrl());
+        assertEquals("assets/not-found.jpg", product.getImageUrl());
         assertEquals(49.99, product.getPrice());
 	}
 
@@ -158,7 +158,7 @@ public class ProductControllerCorsJsonTest extends AbstractIntegrationTest {
         assertTrue(persistedProduct.getId() > 0);
         assertEquals("Carne - Carne de Boi", persistedProduct.getName());
         assertEquals("Alimentos", persistedProduct.getCategory());
-        assertEquals("https://example.com/images/beef.jpg", persistedProduct.getImageUrl());
+        assertEquals("assets/not-found.jpg", persistedProduct.getImageUrl());
         assertEquals(49.99, persistedProduct.getPrice());
 	}
 	
@@ -201,7 +201,7 @@ public class ProductControllerCorsJsonTest extends AbstractIntegrationTest {
 	private void mockProduct() {    	
 		product.setName("Carne - Carne de Boi");
     	product.setCategory("Alimentos");
-    	product.setImageUrl("https://example.com/images/beef.jpg");
+    	product.setImageUrl("assets/not-found.jpg");
     	product.setPrice(Double.valueOf(49.99));
     	product.setLaunchDate(new Date());
     }  

@@ -3,7 +3,7 @@ server:
 cors:
   originPatterns: http://localhost:4200,http://localhost:8080
 file:
-  upload-dir: /home/runner/work/projeto-angular/projeto-crud/backend/UploadDir
+  upload-dir: /home/runner/work/projeto-angular/projeto-crud/frontend/src/app/assets
 security:
   jwt:
     token:

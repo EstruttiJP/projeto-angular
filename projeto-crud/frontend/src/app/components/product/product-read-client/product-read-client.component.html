@@ -1,0 +1,23 @@
+<div>
+<mat-form-field>
+    <mat-label>Buscar produto</mat-label>
+    <input matInput placeholder="Abacaxi" [(ngModel)]="productName" name="productName">
+</mat-form-field>
+<button mat-raised-button (click)="findProductsByName()" color="primary">Buscar</button>
+</div>
+<div class="product-list">
+    <ng-container *ngFor="let product of products">
+        <mat-card class="product-card">
+            <img mat-card-image src="{{product.imageUrl}}" alt="{{ product.name }}">
+            <mat-card-content>
+                <h2>{{ product.name }}</h2>
+                <p>Preço: R${{ product.price }}</p>
+                <p>Categoria: {{ product.category }}</p>
+            </mat-card-content>
+        </mat-card>
+    </ng-container>
+</div>
+<mat-paginator #paginator class="demo-paginator" (page)="handlePageEvent($event)" [length]="totalElements"
+    [pageSize]="pageSize" [disabled]="disabled" [hidePageSize]="hidePageSize" [pageIndex]="pageIndex"
+    aria-label="Select page">
+</mat-paginator>

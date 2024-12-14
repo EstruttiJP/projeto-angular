@@ -123,7 +123,7 @@ public class ProductControllerYamlTest extends AbstractIntegrationTest {
         assertTrue(product.getId() > 0);
         assertEquals("Carne - Carne de Boi", product.getName());
         assertEquals("Alimentos", product.getCategory());
-        assertEquals("https://example.com/images/beef.jpg", product.getImageUrl());
+        assertEquals("assets/not-found.jpg", product.getImageUrl());
         assertEquals(49.99, product.getPrice());
     }
       
@@ -159,7 +159,7 @@ public class ProductControllerYamlTest extends AbstractIntegrationTest {
         assertEquals(productUpdated.getId(), product.getId());
         assertEquals("Carne - Carne de Boi - Updated", productUpdated.getName());
         assertEquals("Alimentos", productUpdated.getCategory());
-        assertEquals("https://example.com/images/beef.jpg", productUpdated.getImageUrl());
+        assertEquals("assets/not-found.jpg", productUpdated.getImageUrl());
         assertEquals(49.99, productUpdated.getPrice());
     }
 
@@ -191,7 +191,7 @@ public class ProductControllerYamlTest extends AbstractIntegrationTest {
         assertNotNull(foundProduct.getPrice());
         assertEquals(foundProduct.getId(), product.getId());
         assertEquals("Carne - Carne de Boi - Updated", foundProduct.getName());
-        assertEquals("https://example.com/images/beef.jpg", foundProduct.getImageUrl());
+        assertEquals("assets/not-found.jpg", foundProduct.getImageUrl());
         assertEquals("Alimentos", foundProduct.getCategory());
         assertEquals(49.99, foundProduct.getPrice());
     }
@@ -249,7 +249,7 @@ public class ProductControllerYamlTest extends AbstractIntegrationTest {
         assertTrue(foundProductOne.getId() > 0);
         assertEquals("Abacate", foundProductOne.getName());
         assertEquals("Alimentos", foundProductOne.getCategory());
-        assertEquals("https://example.com/images/avocado.jpg", foundProductOne.getImageUrl());
+        assertEquals("assets/not-found.jpg", foundProductOne.getImageUrl());
         assertEquals(4.0, foundProductOne.getPrice());
         
         ProductVO foundProductFive = content.get(4);
@@ -262,14 +262,14 @@ public class ProductControllerYamlTest extends AbstractIntegrationTest {
         assertTrue(foundProductFive.getId() > 0);
         assertEquals("Carne - Carne de Vaca", foundProductFive.getName());
         assertEquals("Alimentos", foundProductFive.getCategory());
-        assertEquals("https://example.com/images/beef.jpg", foundProductFive.getImageUrl());
+        assertEquals("assets/not-found.jpg", foundProductFive.getImageUrl());
         assertEquals(26.0, foundProductFive.getPrice());
     }
 	
     private void mockProduct() {    	
     	product.setName("Carne - Carne de Boi");
     	product.setCategory("Alimentos");
-    	product.setImageUrl("https://example.com/images/beef.jpg");
+    	product.setImageUrl("assets/not-found.jpg");
     	product.setPrice(Double.valueOf(49.99));
     	product.setLaunchDate(new Date());
     }  

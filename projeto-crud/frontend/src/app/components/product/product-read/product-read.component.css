@@ -1,18 +1,24 @@
-.edit{
+.edit {
     margin-right: 25px;
 }
-.delete{
-    margin-right: -80px;
-}
-.edit > i{
+
+.edit>i {
     color: #d9cd26;
 }
-.delete > i{
+
+.delete>i {
     color: #ff5757;
 }
-i{
+
+i {
     transition: .8s;
 }
-i:hover{
+
+i:hover {
     transform: scale(1.3);
+}
+
+img {
+    margin: 5px;
+    height: 100px;
 }

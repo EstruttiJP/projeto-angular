@@ -1,9 +1,16 @@
 <mat-card>
     <mat-card-title>Deletar Produto</mat-card-title>
     <mat-card-content>
+        <p>Imagem:</p>
+        <img src="{{product.imageUrl}}" alt="">
+        <mat-divider></mat-divider>
         <p>Produto: {{product.name}}</p>
         <mat-divider></mat-divider>
         <p>Preço: {{product.price}}</p>
+        <mat-divider></mat-divider>
+        <p>Categoria: {{product.category}}</p>
+        <mat-divider></mat-divider>
+        <p>Data de lançamento(no sistema): {{product.launchDate}}</p>
         <mat-divider></mat-divider>
     </mat-card-content>
     <button mat-raised-button (click)="deleteProduct()" btnDelete>Deletar Produto</button>

@@ -62,6 +62,6 @@ public class ProductRepositoryTest extends AbstractIntegrationTest {
 		assertEquals("Carne - Carne de Vaca", product.getName());
 		assertEquals(26.0, product.getPrice());
 		assertEquals("Alimentos", product.getCategory());
-		assertEquals("https://example.com/images/beef.jpg", product.getImageUrl());
+		assertEquals("assets/not-found.jpg", product.getImageUrl());
 	}
 }

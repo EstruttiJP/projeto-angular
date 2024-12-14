@@ -3,6 +3,10 @@
         <mat-nav-list class="nav-list">
             <a mat-list-item routerLink="/"><i class="material-icons v-middle">home</i>inicio</a>
             <a mat-list-item routerLink="/products"><i class="material-icons v-middle">storefront</i>Produtos</a>
+            @if (isAuth) {
+                <a mat-list-item routerLink="/products-admin"><i class="material-icons v-middle">build</i>Produtos-Admin</a>
+                <a mat-list-item (click)="cleanToken()"><i class="material-icons v-middle" appRed>clear</i>Sair</a>
+            }
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">

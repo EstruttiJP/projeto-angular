@@ -13,3 +13,31 @@ button{
     width: 10%;
     margin: 0 0 25px 20px;
 }
+div{
+    margin: 20px 20px 30px 20px;
+}
+.file-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.custom-file-upload {
+    border: 2px solid #4CAF50;
+    background-color: #fff;
+    color: #4CAF50;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-file-upload:hover {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+#file-input {
+    display: none;
+}

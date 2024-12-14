@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HeaderService } from '../../components/template/header/header.service';
 
@@ -7,7 +7,8 @@ import { HeaderService } from '../../components/template/header/header.service';
   templateUrl: './product-crud.component.html',
   styleUrl: './product-crud.component.css'
 })
-export class ProductCrudComponent {
+export class ProductCrudComponent implements OnInit{
+  isAuth = false;
   constructor(private router: Router, private headerService: HeaderService){
     headerService.headerData = {
       title: "Cadastro de Produtos",
@@ -16,6 +17,9 @@ export class ProductCrudComponent {
     }
   }
   navigateToProductCreate(): void{
-    this.router.navigate(["/products/create"]);
+    this.router.navigate(["/products-admin/create"]);
+  }
+  ngOnInit(): void {
+    this.isAuth = this.headerService.isAuthenticated()
   }
 }

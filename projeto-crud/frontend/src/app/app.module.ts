@@ -18,20 +18,22 @@ import { ProductCrudComponent } from './views/product-crud/product-crud.componen
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { RedDirective } from './directives/red.directive';
 import { WhiteDirective } from './directives/white.directive';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort'
-
+import { MatIconModule } from '@angular/material/icon';
 
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { ProductClientComponent } from './views/product-client/product-client.component';
+import { ProductReadClientComponent } from './components/product/product-read-client/product-read-client.component';
 
 registerLocaleData(localePt);
 
@@ -50,7 +52,9 @@ registerLocaleData(localePt);
     WhiteDirective,
     ProductReadComponent,
     ProductUpdateComponent,
-    ProductDeleteComponent
+    ProductDeleteComponent,
+    ProductClientComponent,
+    ProductReadClientComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +71,9 @@ registerLocaleData(localePt);
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    MatDividerModule
+    MatDividerModule,
+    ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [{
     provide: LOCALE_ID,
