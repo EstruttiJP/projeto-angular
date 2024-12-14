@@ -20,7 +20,7 @@ export class ProductUpdateComponent implements OnInit {
     headerService.headerData = {
       title: "Alteração de Produto",
       icon: "storefront",
-      routeUrl: "/products/update"
+      routeUrl: "/products-admin/update"
     }
   }
 

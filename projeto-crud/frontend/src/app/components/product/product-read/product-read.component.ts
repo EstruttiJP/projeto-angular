@@ -3,6 +3,7 @@ import { Product } from './../product.model';
 import { ProductService } from './../product.service';
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
+import { HeaderService } from '../../template/header/header.service';
 
 @Component({
   selector: 'app-product-read',
@@ -14,9 +15,13 @@ export class ProductReadComponent implements OnInit{
   products: Product[] = [];
   displayedColumns = ['id', 'imageUrl','name', 'price', 'category', 'action']
   
-  constructor(private productService: ProductService ){
-
-  }
+  constructor(private productService: ProductService, private headerService: HeaderService) {
+      headerService.headerData = {
+        title: "Produtos",
+        icon: "assignment",
+        routeUrl: "/products"
+      }
+    }
   
   ngOnInit(): void{
     this.readProducts();

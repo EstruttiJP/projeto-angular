@@ -18,7 +18,7 @@ export class ProductDeleteComponent implements OnInit {
     headerService.headerData = {
       title: "Excluir Produto",
       icon: "delete",
-      routeUrl: "/products/delete"
+      routeUrl: "/products-admin/delete"
     }
   }
 

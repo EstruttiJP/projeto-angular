@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { ProductService } from '../product.service';
 import { Product } from '../product.model';
+import { HeaderService } from '../../template/header/header.service';
 
 @Component({
   selector: 'app-product-read-client',
@@ -13,8 +14,12 @@ export class ProductReadClientComponent implements OnInit {
   products: Product[] = [];
   productName = ""
 
-  constructor(private productService: ProductService) {
-
+  constructor(private productService: ProductService, private headerService: HeaderService) {
+    headerService.headerData = {
+      title: "Produtos",
+      icon: "assignment",
+      routeUrl: "/products"
+    }
   }
 
   ngOnInit(): void {
